@@ -1,0 +1,22 @@
+[package]
+name = "cuild"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+opt-level = 3
+debug = false
+incremental = false
+
+[profile.dev]
+opt-level = 0
+debug = true
+codegen-units = 1028
+
+[dependencies]
+toml = "0.8.14"
+serde = { version =  "1.0.203", features = ["derive"] }
+colored = "2.1.0"
